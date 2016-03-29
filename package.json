@@ -1,0 +1,10 @@
+{
+  "name": "path-websocket",
+  "version": "0.0.1",
+  "description": "send position path content info to a websocket ",
+  "dependencies": {
+    "express": "^4.10.2",
+    "socket.io": "^1.3.7",
+    "yargs": "^4.3.2"
+  }
+}
