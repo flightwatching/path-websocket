@@ -8,7 +8,9 @@ Installation
 
 ```npm install socket.io```
 
+```npm install yargs```
+
 
 Run
 =====
-```node index.js```
+```node server.js```
