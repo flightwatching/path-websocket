@@ -15,28 +15,32 @@ fs.readFile(argv.f, 'utf8', function (err, data) {
   positions = JSON.parse(data);
   setInterval(function() {
     console.log(currentI);
-    console.log(positions[currentI]);
+    //console.log(positions[currentI]);
     io.emit('positions', positions[currentI]);
     currentI=(currentI+1)%positions.length;
   }, 1000);
 });
 
 
+app.get('/', function(req, res){
+  res.sendfile('remote.html');
+});
 
 
 io.on('connection', function(socket){
-  socket.on('chat message', function(msg){
-    io.emit('chat message', msg);
-  });
-  socket.on('touch', function(msg){
-    io.emit('touch', msg);
-  });
-  // socket.on('devicemotion', function(msg){
-  //   console.log(JSON.parse(msg));
+  console.log("new socket!");
+  // socket.on('chat message', function(msg){
+  //   io.emit('chat message', msg);
   // });
-  socket.on('deviceorientation', function(msg){
-    io.emit('deviceorientation', msg);
-  });
+  // socket.on('touch', function(msg){
+  //   io.emit('touch', msg);
+  // });
+  // // socket.on('devicemotion', function(msg){
+  // //   console.log(JSON.parse(msg));
+  // // });
+  // socket.on('deviceorientation', function(msg){
+  //   io.emit('deviceorientation', msg);
+  // });
 });
 
 

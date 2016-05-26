@@ -1,5 +1,5 @@
 # gyro-websocket
-send accelerometer info to a websocket concentrator to be used in WILCO (demo purpose)
+reads a file of positions and push it to a websocket
 
 Installation
 =======
